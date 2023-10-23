@@ -10,6 +10,7 @@ use App\Http\Resources\V1\TaskResource;
 use App\Models\Task;
 use App\Services\V1\TaskQuery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -30,19 +31,12 @@ class TaskController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreTaskRequest $request)
     {
-        //
+        $request->merge(['user_id' => 1/*auth()->id()*/]); // for now we didn't implement auth yet! 
+        return new TaskResource(Task::create($request->all()));
     }
 
     /**
@@ -51,14 +45,6 @@ class TaskController extends Controller
     public function show(Task $task)
     {
         return new TaskResource($task);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Task $task)
-    {
-        //
     }
 
     /**
