@@ -11,7 +11,7 @@ class UpdateTaskRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,29 @@ class UpdateTaskRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
-        ];
+        $method = $this->method();
+        
+        if ($method === "PUT"){
+            return [
+                'title' => ['required','string'],
+                'description' => ['required','string'],
+                'dueDate' => ['required','date'],
+            ];
+        } else { // PATCH
+            return [
+                'title' => ['sometimes', 'required','string'],
+                'description' => ['sometimes', 'required','string'],
+                'dueDate' => ['sometimes', 'required','date'],
+            ];
+        }
+    }
+
+    protected function prepareForValidation(): void
+    {
+        if ($this->dueDate) {
+            $this->merge([
+                'due_date' => $this->dueDate,
+            ]);
+        }
     }
 }
