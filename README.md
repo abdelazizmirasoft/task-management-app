@@ -12,8 +12,11 @@ This is a full stack app divided into two parts (Backend API using Laravel and F
 8. Implmented the Login/Logout from the Frontend perspective.
 9. Ensured that UI is responsive
 10. Implemented CRUD operations:
+
     a. View the list of tasks for each user
+    
     b. Add new tasks.
+    
     c. Edit and delete existing tasks.
 
 ## Setup
