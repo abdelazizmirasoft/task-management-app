@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Login from "./Login/Login";
+import Register from "./Register/Register";
 import Dashboard from "./Dashboard/Dashboard";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 import { BrowserRouter, Route } from 'react-router-dom/cjs/react-router-dom.min';
@@ -11,6 +12,9 @@ function App() {
             <BrowserRouter>
                 <Route path={'/app/login'}>
                     <Login/>
+                </Route>
+                <Route path={'/app/register'}>
+                    <Register/>
                 </Route>
                 <ProtectedRoute
                     exact path={'/app/dashboard'}
