@@ -2,7 +2,7 @@
 ## About Task Management App (in progress)
 
 This is a full stack app divided into two parts (Backend API using Laravel and Frontend using ReactJS) , in this app:
-1. Created DB scheam with Task table.
+1. Created DB schema with Task table.
 2. Implemented routes for CRUD operations on Task table.
 3. Implemented the Authentication system using Laravel-Sanctum
 4. Protected CRUD routes to ensure only authenticated users can access them.
