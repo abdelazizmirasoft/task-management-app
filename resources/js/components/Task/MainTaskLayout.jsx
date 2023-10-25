@@ -19,9 +19,6 @@ function MainTaskLayout() {
     // Fetch tasks from API
     const fetchTasks = async () => {
         try {
-            // window.axios.get('/api/auth/register', registerCredentials).then((response) => {
-            //     setTasks(response.data);
-            // })
             const response = await fetch(
                     baseURL, 
                     {
