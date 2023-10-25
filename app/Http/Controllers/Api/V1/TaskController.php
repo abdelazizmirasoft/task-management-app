@@ -21,6 +21,7 @@ class TaskController extends Controller
     {
         $filter = new TaskQuery();
         $queryItems = $filter->transform($request);
+        $queryItems[] = ['user_id', '=', auth()->id()];
 
         if (count($queryItems) === 0) {
             return new TaskCollection(Task::paginate());
@@ -35,7 +36,7 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request)
     {
-        $request->merge(['user_id' => 1/*auth()->id()*/]); // for now we didn't implement auth yet! 
+        $request->merge(['user_id' => auth()->id()]); // for now we didn't implement auth yet! 
         return new TaskResource(Task::create($request->all()));
     }
 
@@ -53,6 +54,7 @@ class TaskController extends Controller
     public function update(UpdateTaskRequest $request, Task $task)
     {
         $task->update($request->all());
+        return new TaskResource($task);
     }
 
     /**

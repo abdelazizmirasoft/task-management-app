@@ -7,10 +7,9 @@ import {
     CssBaseline,
     Typography
 } from "@mui/material";
-import user from "../../models/user";
 import {withRouter} from "react-router-dom";
 
-function Register({history, location}) {
+function Register({history}) {
     
     const handleSubmit = (event) => {
         event.preventDefault()
