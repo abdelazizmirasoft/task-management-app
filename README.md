@@ -11,6 +11,13 @@ This is a full stack app divided into two parts (Backend API using Laravel and F
 7. Setup ReactJS
 8. Implmented the Login/Logout from the Frontend perspective.
 9. Ensured that UI is responsive
+10. Implemented CRUD operations:
+
+    a. View the list of tasks for each user
+    
+    b. Add new tasks.
+    
+    c. Edit and delete existing tasks.
 
 ## Setup
 
@@ -21,8 +28,5 @@ This is a full stack app divided into two parts (Backend API using Laravel and F
 2. Run `npm run dev` to start using the app
 
 ## Future work
-1. View a list of their tasks.
-2. Add new tasks.
-3. Edit and delete existing tasks.
 4. Filter tasks by status
 5. Write tests for your API endpoints using PHPUnit.
